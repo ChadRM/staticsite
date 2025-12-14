@@ -13,7 +13,14 @@ class TestHTMLNode(unittest.TestCase):
     def test_leaf_no_child(self):
         node = LeafNode("a","random anchor text")
         self.assertIsNone(node.children)
-
+    
+    def test_left_no_tag_value(self):
+        node = LeafNode("","should be fine")
+        self.assertEqual(node.to_html(),"should be fine")
+    
+    def test_leaf_no_value(self):
+        node = LeafNode(tag="p",value="")
+        self.assertRaises(ValueError,node.to_html)
 
 if __name__ == "__main__":
     unittest.main()

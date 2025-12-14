@@ -1,12 +1,12 @@
 from htmlnode import HTMLNode
 
 class LeafNode(HTMLNode):
-    def __init__(self,tag, value, props={}):
-        super().__init__(self,tag,value,props=props)
+    def __init__(self, tag, value, props={}):
+        super().__init__(tag=tag,value=value,children=None,props=props)
 
-    def to_html():
-        if self.value == None:
+    def to_html(self):
+        if self.value == None or self.value == "":
             raise ValueError("all leaf nodes must have a value")
-        if self.tag == None:
+        if self.tag == None or self.tag == "":
             return self.value
-        return f"<{tag}>{self.value}</{tag}>"
+        return f"<{self.tag}>{self.value}</{self.tag}>"
