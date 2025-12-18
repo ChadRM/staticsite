@@ -11,28 +11,28 @@ class TestSplitNode(unittest.TestCase):
 
     def test_bold(self):
         node = TextNode("This is text with a **bold* word.*",TextType.TEXT)
-        newnodes = split_nodes_delimiter([node],"**",TextType.BOLD)
-        self.assertEqual(newnodes[1].text_type,TextType.BOLD)
+        new_nodes = split_nodes_delimiter([node],"**",TextType.BOLD)
+        self.assertEqual(new_nodes[1].text_type,TextType.BOLD)
     
     def test_ends(self):
         node = TextNode("This node ends in **bold**",TextType.TEXT)
-        newnodes = split_nodes_delimiter([node],"**",TextType.BOLD)
-        self.assertEqual(newnodes[1].text_type,TextType.BOLD)
+        new_nodes = split_nodes_delimiter([node],"**",TextType.BOLD)
+        self.assertEqual(new_nodes[1].text_type,TextType.BOLD)
 
     def test_starts(self):
         node = TextNode("**Starts** with bold this time.",TextType.TEXT)
-        newnodes = split_nodes_delimiter([node],"**",TextType.BOLD)
-        self.assertEqual(newnodes[1].text_type,TextType.BOLD)
+        new_nodes = split_nodes_delimiter([node],"**",TextType.BOLD)
+        self.assertEqual(new_nodes[1].text_type,TextType.BOLD)
 
     def test_italics(self):
         node = TextNode("This is some _italics_ for you.",TextType.TEXT)
-        newnodes = split_nodes_delimiter([node],"_",TextType.ITALIC)
-        self.assertEqual(newnodes[1].text_type,TextType.ITALIC)
+        new_nodes = split_nodes_delimiter([node],"_",TextType.ITALIC)
+        self.assertEqual(new_nodes[1].text_type,TextType.ITALIC)
 
     def test_code(self):
         node = TextNode("This is some `code` for you.",TextType.TEXT)
-        newnodes = split_nodes_delimiter([node],"`",TextType.CODE)
-        self.assertEqual(newnodes[1].text_type,TextType.CODE)
+        new_nodes = split_nodes_delimiter([node],"`",TextType.CODE)
+        self.assertEqual(new_nodes[1].text_type,TextType.CODE)
 
 if __name__ == "__main__":
     unittest.main()
