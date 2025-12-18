@@ -1,4 +1,4 @@
-from textnode import TextNode,TextType,text_node_to_html_node
+from textnode import TextNode,TextType
 
 def split_nodes_delimiter(old_nodes,delimiter,text_type):
     output = []
@@ -7,11 +7,11 @@ def split_nodes_delimiter(old_nodes,delimiter,text_type):
             output.append(node)
         else: 
             new_nodes = node.text.split(delimiter)
-            thisnodelist = []
+            this_node_list = []
             if len(new_nodes) > 1:
-                thisnodelist.append(TextNode(new_nodes[0],TextType.TEXT))
-                thisnodelist.append(TextNode(new_nodes[1],text_type))
+                this_node_list.append(TextNode(new_nodes[0],TextType.TEXT))
+                this_node_list.append(TextNode(new_nodes[1],text_type))
                 if len(new_nodes) > 2:
-                    thisnodelist.append(TextNode(new_nodes[2],TextType.TEXT))
-            output.extend(thisnodelist)
+                    this_node_list.append(TextNode(new_nodes[2],TextType.TEXT))
+            output.extend(this_node_list)
     return output

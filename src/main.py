@@ -1,8 +1,8 @@
 from textnode import TextNode, TextType
 
 def main():
-    textnode = TextNode("Some Text",TextType.LINK,"http://yourmom.com")
-    print(textnode)
+    text_node = TextNode("Some Text", TextType.LINK, "https://yourmom.com")
+    print(text_node)
 
 
 

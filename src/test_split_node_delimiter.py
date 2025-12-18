@@ -1,6 +1,8 @@
 import unittest
-from textnode import TextNode, TextType, text_node_to_html_node
+
 from split_node_delimiter import split_nodes_delimiter
+from textnode import TextNode, TextType
+
 
 class TestSplitNode(unittest.TestCase):
     def test_text(self):
