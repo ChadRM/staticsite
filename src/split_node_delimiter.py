@@ -93,3 +93,13 @@ def split_nodes_link(old_nodes):
         if original_text != "":
             new_nodes.append(TextNode(original_text, TextType.TEXT))
     return new_nodes
+
+def markdown_to_blocks(markdown):
+    markdown_list = markdown.split("\n\n")
+    new_blocks = []
+    output = []
+    for raw_block in markdown_list:
+        raw_block = raw_block.strip()
+        if raw_block != "":
+            new_blocks.append(raw_block)
+    return new_blocks
