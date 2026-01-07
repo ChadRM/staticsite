@@ -1,6 +1,6 @@
 import unittest
 from textnode import TextNode, TextType
-from split_node_delimiter import split_nodes_image
+from inline_markdown import split_nodes_image
 
 class TestSplitNodeImage(unittest.TestCase):
     def test_split_images(self):
